@@ -1,0 +1,16 @@
+---    
+     - name: Install Mysql package
+       action: apt pkg={{ item }} state=installed
+       with_items:
+       - mysql-server
+       # needed for issuing mysql commands through ansible
+       - MySQL-python
+       - python-mysqldb
+
+     - name: service mysql  
+       action: service name=mysql state=started 
+
+     - name: write my.cnf 
+       action: template src='my.cnf.j2' dest='/etc/mysql/conf.d/mysqld-ansible.cnf'
+       notify:
+       - restart mysql 

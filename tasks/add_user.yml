@@ -1,0 +1,3 @@
+---    
+     - name: add mysql user 
+       mysql_user: name={{ user }} password={{ password }} priv=*.*:ALL host='%' state=present
