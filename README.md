@@ -1,6 +1,8 @@
 ## mysql server Ansible role
 
-This role installs
+This role installs mysql-server and manages users and databases.
+
+**[7/23/2013] Right now, the role only facilitates adding users and databses**
 
 ### Usage
 
@@ -12,7 +14,7 @@ Add the role to a playbook:
 	  roles:
 	 	- mysql_server
 
-By adding the role, the tasks in `tasks/main.yml` are run automatically. 
+By adding the role, the tasks in `tasks/main.yml` run automatically when the playbook is called. 
 
 **This has only been tested on Ubuntu 12.10**
 
